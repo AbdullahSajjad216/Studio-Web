@@ -13,7 +13,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- for jquery-->
 
     <title>Must Studio</title>
 </head>
@@ -22,22 +22,23 @@
     <header>
         <nav class="navbar navbar-expand-lg clor fixed-top " style="
         padding-bottom: 0px;
-        padding-top: 0px;
-    ">
+        padding-top: 0px;">
             <div class="container-fluid con">
+               
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation" style="border:none;padding-top: 0px;padding-bottom: 0px;">
+                       
+                        <div id="nav-icon3">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                     
+                    </button>
+               
                 <a class="navbar-brand" href="#"><img class="m20 wid55" src="./logo.png" alt="brand logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
-                    aria-label="Toggle navigation" style="border:none">
-                    <span class="navbar-toggler-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="#fff"
-                            viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
-                            </path>
-                        </svg>
-                    </span>
-                </button>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
@@ -66,11 +67,12 @@
 
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+
+                    <button type="button" id="radio1" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
                         class="active hide" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                    <button type="button" id="radio2" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
                         aria-label="Slide 2" class=" hide"></button>
-                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                    <button type="button" id="radio3" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
                         aria-label="Slide 3" class=" hide"></button>
                 </div>
                 <div class="carousel-inner">
@@ -78,13 +80,12 @@
                         <div class="sl_1">
                             <img class="slide_img " src="./slider1.png" class="w-100" alt="...">
                         </div>
-                        <!-- <div class="w-100 " style="background:url(./slider1.png) ;"></div> -->
                         <div class="slider-content-left position-absolute text_on_img">
                             <pre><h1 class="set_left">
                 Smart
                 <span class="colr_text_lg">Contract</span>
                 Development</h1></pre>
-                            <a href="#" class="button_learn">Learn More</a>
+                            <a href="#" class="button_learn">Learn More <img class="arrow_banner" src="./aro.png" alt=""></a>
 
                         </div>
                     </div>
@@ -99,7 +100,7 @@
                             <br>
                             <br>
                             <br>
-                            <a href="#" class="button_learn2">Get Qoute</a>
+                            <a href="#" class="button_learn2">Get Qoute <img class="arrow_banner" src="./aro.png" alt=""></a>
 
                         </div>
                     </div>
@@ -114,7 +115,7 @@
                             <br>
                             <br>
                             <br>
-                            <a href="#" class="button_learn2">Learn More</a>
+                            <a href="#" class="button_learn2">Learn More <img class="arrow_banner" src="./aro.png" alt=""></a>
 
                         </div>
                     </div>
@@ -133,7 +134,44 @@
 
         </section>
         <!--slide bar-->
+        <section>
+            <div class="chat_box_ collapse" role="dialog" id="mymodal">
+            </div>
+            <div class="pop_up_">
+                <div class="modal-dialog collapse" role="dialog" id="mymodal">
+                    <div class="modal-content" id="count_add">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <form id="contact-form-modal">
+                            <input class="contactfield" type="text" name="name" placeholder="Your Name" required=""><br>
+                            <input class="contactfield" type="email" name="email" placeholder="Your Email"
+                                required=""><br>
+                            <input class="contactfield" type="number" name="number" placeholder="Your Phone No"
+                                required=""><br>
+                            <textarea style="height: 200px" class="contactfieldarea" type="text" name="msg"
+                                placeholder="Your Message" required=""></textarea> <br>
+                            <input style="width: 100%;border-radius: 0;" class="submit" type="submit" name="submit"
+                                value="Send">
+                        </form>
+                    </div>
+                </div>
+            </div>
 
+        </section>
+
+
+        <!--chat/mail box-->
+        <section>
+            <div class="inlineb wid60px index_5" style="position: fixed; bottom: 20px;right: 0;">
+                <a href="#mymodal" id="hide_btn_js" data-bs-toggle="collapse" class="">
+                    <div class="">
+                        <i class="fa fa-envelope footerSocialIcons" aria-hidden="true"></i>
+                    </div>
+
+                </a>
+            </div>
+        </section>
+       
+        <!--Chat icon-->
         <section class="back_ground_who_we_are">
             <H1 class="heading_1">Who <span class="text_color bold">we</span> are</H1>
             <div class="sepration"></div>
@@ -496,9 +534,9 @@ Marketplace</h3></pre>
                             <input type="email" placeholder="Your Email" class="contact_details" required><br>
                             <input type="number" placeholder="Your Phone Number" class="contact_details" required><br>
                             <textarea class="contact_details_msg" placeholder="Your Message" required></textarea>
-    <button class="send_btn" type="submit" value="submit">Send</button>                        
-</form>
-                    
+                            <button class="send_btn" type="submit" value="submit">Send</button>
+                        </form>
+
                         <div style="margin-top:15px;">
                             <span class="lights">
                                 <b style="color: white;margin-top: 15px;">Note:</b>
@@ -579,6 +617,21 @@ Marketplace</h3></pre>
 
                             </div>
                         </div>
+                        <div style="margin-top:20px;" class="row d-sm-block d-md-flex align-items-center">
+                            <div class="col-md-3">
+                                <a href="https://wa.me/923215236350" target="_blank">
+                                <div class="icon_box">
+                                    <i class="fa fa-whatsapp"></i>
+                                </div>
+                                </a>
+                            </div>
+                            <div class=" col-md-9 col-sm-12">
+                                <a href="https://wa.me/923215236350" target="_blank">
+                                    <p class="lights white">Lets Chat..</p>
+                                </a>
+
+                            </div>
+                        </div>
 
 
                         <div class=" todown">
@@ -620,7 +673,7 @@ Marketplace</h3></pre>
             <img src="./footerLogo.png" alt="NARSUN logo" class="footerLogo">
         </section>
         <!--Contact Us-->
-
+        <script src="./index.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
             crossorigin="anonymous"></script>
